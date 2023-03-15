@@ -46,22 +46,26 @@ const roundScore=(dice)=>{
         
         for (const [key, value] of Object.entries(diceCount)){
             if (key == '1'){
-                if (value >= 3){
+                if (value >= 3 && value<6){
                     score += 1000
-                    score += (value-3)*100
-                }else{
-                    score += 100 * value
+                }else if (value===6){
+                    score += 2000
                 }
+                score+= value % 3 * 100
             }else if (key == '5'){
-                if (value >= 3){
+                if (value >= 3 && value<6){
                     score += 500
-                    score += (value-3)*50
-
-                }else{
-                    score += 50 * value
+                }else if (value===6){
+                    score +=1000
                 }
+                score+= value % 3 * 50
+                
             }else if(value >= 3){
-                score += parseInt(key) * 100
+                if (value >= 3 && value<6){
+                    score += parseInt(key) * 100
+                }else if (value==6){
+                    score += parseInt(key) * 200
+                }
 
             }
         }
@@ -89,15 +93,17 @@ const total=(score)=>{
     totalScore.innerText = `${thisTotal}`
     screen_total.appendChild(totalScore)
     if (myScore >= 10000){
-        alert("You Win")
         document.getElementById("canvas").style.display="block"
         document.getElementById("win").style.display="block"
-
         setTimeout(reset,5000)
     }
 }
 
 const reset=()=>{
+    let round_total = document.getElementById('round')
+    round_total.innerText=""
+    let totalScore = document.getElementById('total')
+    totalScore.innerText=""
     let screen_dice = document.getElementById('dice')
     removeDice(screen_dice)
     document.getElementById("win").style.display="none"
