@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="./dice.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <p>Total Score: </p>
-    <div id="total">
-        
-    </div>
-    <p>Round Score: </p>
-    <div id="round">
-        
-    </div>
-    <div id="dice">
-        
-    </div>
-    <div id="my_btn">
-        <input type="button" value="Roll Dice" onClick="rollDice()">
-    </div>
-    <div id="my_btn">
-        <input type="button" value="reset" onClick="reset()">
-    </div>
+<center>
+    <div id="logo">10000 Dice Game</div>
+<div id="dice">
     
+</div>
+<div id="my_btn">
+    <button onClick="rollDice()">Roll Dice</button>
+    <button onClick="reset()">Start Over</button>
+</div>
+
+<div id="scores">
+    <p>Round Score: 
+    <div id="round"></div>
+    </p>
+    <p>Total Score:
+    <div id="total"></div>
+    </p>
+
+</div>
+</center>
+<canvas id="canvas"></canvas> 
+<div id="win"><center><h1>You Win!</h1></center></div>
 </body>
 </html>

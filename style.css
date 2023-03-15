@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "Poker";
+    src: url('./fonts/poker.ttf') format('truetype');
+}
+.a-dice img{
+    background-color:red;
+    border:1px solid black;
+    border-radius: 10px;
+    width:100px;
+    margin: 5px;
+}
+
+body{
+    background-color: #35653f ;
+    background-image: url("images/FELT.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button{
+    padding:10px;
+    background-color:red;
+    color:white;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: x-large;
+
+}
+p{
+    color:red;
+    font-weight: bolder;
+    font-size: xx-large;
+
+}
+
+#logo{
+    color:white;
+    font-family: 'Poker';
+    padding: 1em;
+    font-size: 92px;
+    background: -webkit-linear-gradient(#ff0000, #c7c7c7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#round, #total{
+    color:white;
+    font-weight: bolder;
+    padding: 0em 1em;
+    margin: 0em 1em;
+}
+
+#scores{
+    display: flex;
+    padding: 0em 1em;
+    margin: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+
+canvas {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    z-index: -1;
+  }
+
+  #win{
+    width: 100%;
+    margin: 0;
+    display:none;
+    position: fixed;
+    top:50%;
+    height:100%;
+    z-index: 999;
+}
+#win h1{
+
+    color:white;
+    font-weight: bolder;
+    font-size: xx-large;
+    background-color:#35653f;
+  }
